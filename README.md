@@ -1,1 +1,0 @@
-# glukerok.github.io
