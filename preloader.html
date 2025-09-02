@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combine vs BOSS - Garry's Mod Server</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('images/1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+            transition: background-image 1.5s ease-in-out;
+        }
+        
+        .title-font { font-family: 'Orbitron', sans-serif; }
+        
+        .feature-card {
+            background: rgba(33, 37, 41, 0.6);
+            border-radius: 10px;
+            border-top: 3px solid var(--bs-primary);
+            border-bottom: 3px solid var(--bs-danger);
+        }
+        
+        .rules-card {
+            background: rgba(33, 37, 41, 0.6);
+            border-radius: 10px;
+            border-left: 3px solid var(--bs-warning);
+            border-right: 3px solid var(--bs-info);
+        }
+        
+        .progress-bar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #0d6efd, #dc3545);
+            transition: width 7s linear;
+        }
+        
+        .bilingual-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .english-text {
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .russian-text {
+            font-style: italic;
+            color: #aaa;
+            font-size: 0.85em;
+        }
+
+        .rule-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media (max-width: 768px) {
+            .header-title { font-size: 2.5rem; }
+            .russian-text { margin-left: 0; margin-top: 2px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="bgProgressBar"></div>
+    </div>
+    
+    <div class="container text-center">
+        <header class="mb-2">
+            <h1 class="header-title mb-4" style="font-size: 3.5rem; font-weight: 700; letter-spacing: 2px;">
+                <span class="title-font text-primary">Combine</span>
+                <span class="title-font text-light">VS</span>
+                <span class="title-font text-danger">BOSS</span>
+            </h1>
+            <div class="mx-auto fs-5">
+                <p class="english-text">Combine VS Boss (CVB) — a dynamic Garry's Mod mode where players unite against bosses.
+                    Each boss is a unique challenge requiring coordinated tactics and teamwork.
+                    Progress, fight to captivating music, and triumph in the most epic encounters!</p>
+                <p class="russian-text">Combine VS Boss (CVB) — это динамичный режим для Garry's Mod, где игроки объединяются против боссов.
+                    Каждый босс — это уникальный вызов, требующий слаженной тактики и командной работы.
+                    Развивайтесь, сражайтесь под захватывающую музыку и побеждайте в самых эпичных столкновениях!
+                </p>
+            </div>
+        </header>
+        
+        <div class="row g-4 mb-2">
+            <div class="col-md-6">
+                <div class="feature-card h-100 p-4">
+                    <h3 class="text-primary mb-2" style="font-size: 1.3rem;">
+                        <span class="english-text">Custom Weapons</span>
+                        <span class="russian-text">Пользовательское оружие</span>
+                    </h3>
+                    <div class="bilingual-text">
+                        <p class="english-text mb-1">Unique weapons that can be earned and used against bosses. Each weapon type has special characteristics and playstyle.</p>
+                        <p class="russian-text mb-0">Уникальное оружие, которое можно заработать и использовать против боссов. Каждый тип оружия имеет особые характеристики и стиль игры.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="feature-card h-100 p-4">
+                    <h3 class="text-primary mb-2" style="font-size: 1.3rem;">
+                        <span class="english-text">Boss Variety</span>
+                        <span class="russian-text">Разнообразие боссов</span>
+                    </h3>
+                    <div class="bilingual-text">
+                        <p class="english-text mb-1">Multiple unique bosses with different abilities and combat tactics. Each boss offers a unique gaming experience.</p>
+                        <p class="russian-text mb-0">Множество уникальных боссов с различными способностями и тактиками боя. Каждый босс предлагает уникальный игровой опыт.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="feature-card h-100 p-4">
+                    <h3 class="text-primary mb-2" style="font-size: 1.3rem;">
+                        <span class="english-text">Equipment System</span>
+                        <span class="russian-text">Система экипировки</span>
+                    </h3>
+                    <div class="bilingual-text">
+                        <p class="english-text mb-1">Customize your equipment and get new weapons during rounds. Level up and become stronger with each victory.</p>
+                        <p class="russian-text mb-0">Настройте свою экипировку и получайте новое оружие во время раундов. Прокачивайтесь и становитесь сильнее с каждой победой.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="feature-card h-100 p-4">
+                    <h3 class="text-primary mb-2" style="font-size: 1.3rem;">
+                        <span class="english-text">Dynamic Music</span>
+                        <span class="russian-text">Динамичная музыка</span>
+                    </h3>
+                    <div class="bilingual-text">
+                        <p class="english-text mb-1">Powerful No Copyright boss battle tracks to intensify the tension and atmosphere of your fights.</p>
+                        <p class="russian-text mb-0">Мощные No Copyright треки для битв с боссами, усиливающие напряжение и атмосферу ваших сражений.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="title-font text-warning mb-2">
+            <span class="english-text">Server Rules</span>
+            <span class="russian-text">Правила сервера</span>
+        </h2>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="rules-card h-100 p-4 text-start">
+                    <h3 class="text-light mb-2" style="font-size: 1.3rem;">
+                        <span class="english-text">Respect Each Other</span>
+                        <span class="russian-text">Уважайте друг друга</span>
+                    </h3>
+                    <p class="mb-0 text-danger">
+                        <span class="english-text">Prohibited:</span>
+                        <span class="russian-text">Запрещено</span>
+                    </p>
+                    <ul class="mb-0 ps-3">
+                        <li class="rule-item">
+                            <span class="english-text">Insults, spam, toxicity</span>
+                            <span class="russian-text">Оскорбления, спам, токсичность</span>
+                        </li>
+                        <li class="rule-item">
+                            <span class="english-text">Racism, harassment, discrimination</span>
+                            <span class="russian-text">Расизм, домогательства, дискриминация</span>
+                        </li>
+                        <li class="rule-item">
+                            <span class="english-text">Doxing (disclosure of personal information)</span>
+                            <span class="russian-text">Doxing (разглашение личной информации)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="rules-card h-100 p-4 text-start">
+                    <h3 class="text-light mb-2" style="font-size: 1.3rem;">
+                        <span class="english-text">Absolutely Fair Play</span>
+                        <span class="russian-text">Абсолютно честная игра</span>
+                    </h3>
+                    <p class="mb-0 text-danger">
+                        <span class="english-text">Prohibited:</span>
+                        <span class="russian-text">Запрещено</span>
+                    </p>
+                    <ul class="mb-0 ps-3">
+                        <li class="rule-item">
+                            <span class="english-text">Any cheating (cheats, exploits)</span>
+                            <span class="russian-text">Любое читерство (читы, эксплойты)</span>
+                        </li>
+                        <li class="rule-item">
+                            <span class="english-text">Using map bugs and glitch locations</span>
+                            <span class="russian-text">Использование багов карты и глитч-локаций</span>
+                        </li>
+                        <li class="rule-item">
+                            <span class="english-text">Intentional round stalling</span>
+                            <span class="russian-text">Намеренное затягивание раунда</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Массив с фоновыми изображениями
+        const backgrounds = [
+            'images/1.jpg',
+            'images/2.jpg',
+            'images/3.jpg',
+        ];
+        
+        let currentBackground = 0;
+        const progressBar = document.getElementById('bgProgressBar');
+        
+        // Функция для сменя фона
+        function changeBackground() {
+            // Сбрасываем прогресс-бар
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '0%';
+            
+            // Меняем фон
+            currentBackground = (currentBackground + 1) % backgrounds.length;
+            document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('${backgrounds[currentBackground]}')`;
+            
+            // Запускаем анимацию прогресс-бара
+            setTimeout(() => {
+                progressBar.style.transition = 'width 7s linear';
+                progressBar.style.width = '100%';
+            }, 50);
+        }
+        
+        // Меняем фон каждые 10 секунд
+        setInterval(changeBackground, 7000);
+        
+        // Инициализация первого фона и прогресс-бара
+        changeBackground();
+    </script>
+</body>
+</html>
